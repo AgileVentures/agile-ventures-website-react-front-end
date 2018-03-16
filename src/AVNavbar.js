@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
+import { Link } from 'react-router-dom'
+
 class AVNavbar extends Component {
   render() {
     return (
@@ -17,7 +19,7 @@ class AVNavbar extends Component {
                 Getting Started
               </NavItem>
               <NavItem eventKey={2} href="#">
-                About Us
+                <Link to='about-us'>About Us</Link>
               </NavItem>
               <NavDropdown eventKey={3} title="Events" id="basic-nav-dropdown">
                 <MenuItem eventKey={3.1}>Upcoming Events</MenuItem>
