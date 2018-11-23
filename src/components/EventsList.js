@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Card, Container } from "semantic-ui-react";
+import BigCalendar from "react-big-calendar";
 import axios from "axios";
+import moment from 'moment'
+import 'react-big-calendar/lib/css/react-big-calendar.css'
+
+
 
 export default class EventsList extends Component {
   constructor(props) {
@@ -28,8 +33,21 @@ export default class EventsList extends Component {
     this.mounted = false;
   }
   render() {
+    const localizer = BigCalendar.momentLocalizer(moment) 
     return (
       <Container>
+    <BigCalendar
+      localizer={localizer}
+      events={[{
+  title: "tre",
+  start: Date.new,
+  end: Date.new,
+  allDay: true
+}]}
+      startAccessor="start"
+      endAccessor="end"
+    />
+ 
         <Card.Group>
           {this.state.events.map((event, id) => {
             return (
