@@ -23,7 +23,16 @@ export default class EventsList extends Component {
     axios.get("https://www.agileventures.org/events.json").then(response => {
       console.log(response.data);
       if (this.mounted) {
-        this.setState({ events: response.data });
+
+          let events=response.data.map(event => {
+            return {
+              ...event,
+              start: moment(event.start),
+              stop: moment(event.end),
+              allDay: true
+            }
+          })
+        this.setState({ events });
       }
     });
   }
@@ -33,36 +42,31 @@ export default class EventsList extends Component {
     this.mounted = false;
   }
   render() {
+    console.log(this.state.events)
     const localizer = BigCalendar.momentLocalizer(moment) 
     return (
       <Container>
-    <BigCalendar
-      localizer={localizer}
-      events={[{
-  title: "tre",
-  start: Date.new,
-  end: Date.new,
-  allDay: true
-}]}
-      startAccessor="start"
-      endAccessor="end"
+        <BigCalendar
+          localizer={localizer}
+          events={this.state.events}
     />
- 
-        <Card.Group>
-          {this.state.events.map((event, id) => {
-            return (
-              <Card key={id}>
-                <Card.Content>
-                  <Card.Header>{event.title}</Card.Header>
-                  <Card.Meta>
-                  {new Date(event.start).toUTCString()} - {new Date(event.end).toUTCString().substring(17)}
-                  </Card.Meta>
-                </Card.Content>
-              </Card>
-            );
-          })}
-        </Card.Group>
-      </Container>
+
+  <Card.Group>
+    {this.state.events.map((event, id) => {
+      return (
+        <Card key={id}>
+          <Card.Content>
+            <Card.Header>{event.title}</Card.Header>
+            <Card.Meta>
+              {console.log(event.start.format())}
+              {event.start.format('MM-DD hh:mm')} - {event.stop.format('MM-DD hh:mm')}
+        </Card.Meta>
+      </Card.Content>
+    </Card>
+      );
+    })}
+      </Card.Group>
+    </Container>
     );
   }
 }
