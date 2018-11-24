@@ -24,10 +24,9 @@ export default class EventsList extends Component {
       if (this.mounted) {
           let events=response.data.map(event => {
             return {
-              title: event.title,
+              ...event,
               start: new Date(event.start),
               end: new Date(event.end),
-              allDay: false
             }
           })
         this.setState({ events });
@@ -41,7 +40,7 @@ export default class EventsList extends Component {
   }
   render() {
     console.log(this.state.events)
-    const localizer = BigCalendar.momentLocalizer(moment) 
+    const localizer = BigCalendar.momentLocalizer(moment)
     return (
       <Container>
         <BigCalendar
