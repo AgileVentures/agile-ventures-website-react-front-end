@@ -21,15 +21,13 @@ export default class EventsList extends Component {
     this.mounted = true;
 
     axios.get("https://www.agileventures.org/events.json").then(response => {
-      console.log(response.data);
       if (this.mounted) {
-
           let events=response.data.map(event => {
             return {
-              ...event,
-              start: moment(event.start),
-              stop: moment(event.end),
-              allDay: true
+              title: event.title,
+              start: new Date(event.start),
+              end: new Date(event.end),
+              allDay: false
             }
           })
         this.setState({ events });
@@ -58,8 +56,7 @@ export default class EventsList extends Component {
           <Card.Content>
             <Card.Header>{event.title}</Card.Header>
             <Card.Meta>
-              {console.log(event.start.format())}
-              {event.start.format('MM-DD hh:mm')} - {event.stop.format('MM-DD hh:mm')}
+              {moment(event.start).format('MM-DD hh:mm')} - {moment(event.end).format('MM-DD hh:mm')}
         </Card.Meta>
       </Card.Content>
     </Card>
