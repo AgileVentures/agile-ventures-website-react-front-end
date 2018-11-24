@@ -20,7 +20,7 @@ export default class EventsList extends Component {
     //todo remove this when we start using redux
     this.mounted = true;
 
-    axios.get("https://www.agileventures.org/events.json").then(response => {
+    axios.get("events.json").then(response => {
       if (this.mounted) {
           let events=response.data.map(event => {
             return {
