@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { fetchHangouts } from "../actions/getHangoutsAction";
 import { Card, Container } from "semantic-ui-react";
+import HangoutCard from "./HangoutCard"
 
 class HangoutsList extends Component {
   constructor(props) {
@@ -23,6 +23,13 @@ class HangoutsList extends Component {
   }
 
   render() {
+    const videoOpts = {
+      height: '150',
+      width: '290',
+      playerVars: {
+        autoplay: 0
+      }
+    };
     return (
       <Container>
         <div>
@@ -30,25 +37,14 @@ class HangoutsList extends Component {
             Hangouts
           </h1>
         </div>
-
-        {this.props.hangouts.map((hangout, id) => {
-          return (
-            <Card fluid key={id} className="event-cards">
-              <Card.Content>
-                <Link to={`/${id}`} className="event-title">
-                  <big>
-                    <Card.Header>{hangout.title}</Card.Header>
-                  </big>
-                </Link>
-                <Card.Meta>
-                </Card.Meta>
-              </Card.Content>
-              <Card.Description>
-              </Card.Description>
-            </Card>
-          );
-        })}
-      </Container>
+        <Card.Group>
+          {this.props.hangouts.map((hangout, id) => {
+            return (
+             <HangoutCard hangout={hangout} opts={videoOpts} />
+            );
+          })}
+      </Card.Group>
+    </Container>
     );
   }
 }
