@@ -64,7 +64,6 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
         <Grid>{this.renderModals()}</Grid>
       </React.Fragment>
     );
