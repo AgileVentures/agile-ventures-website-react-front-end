@@ -18,19 +18,19 @@ export default class HangoutCard extends Component {
         <Card.Content>
           <Card.Header>{hangout.title}</Card.Header>
           <Card.Meta> {hangout.category}
-          </Card.Meta>
-        </Card.Content>
-        <Card.Description>
-          <Button.Group floated="right">
-          <a href={hangout.hangout_url}>
-            <Button primary >Join</Button>
-          </a>
-          <a href={this.youtubeURL(hangout.yt_video_id)}>
-            <Button secondary>Watch</Button>
-          </a>
-        </Button.Group>
-        </Card.Description>
-      </Card>
+      </Card.Meta>
+    </Card.Content>
+    <Card.Content extra>
+      <div className='ui two buttons'>
+        <a href={hangout.hangout_url} class={"ui basic button primary"} target="blank">
+          Join
+        </a>
+        <a href={this.youtubeURL(hangout.yt_video_id)} class={"ui basic button secondary"} target="blank">
+          Watch
+        </a>
+      </div>
+    </Card.Content>
+  </Card>
     )
   }
 }
