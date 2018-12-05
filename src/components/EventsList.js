@@ -39,13 +39,13 @@ export class EventsList extends Component {
             AgileVentures Events
             <Button
               content="New Event"
-              attached="right"
+              floated="right"
               className="new-event-button"
             />
           </h1>
           <p>
             We are hosting several events a day using Google Hangouts. Feel free
-            to join in if you want to get involved or if you a curious about
+            to join in if you want to get involved or if you are curious about
             Pair Programming and Agile. Each event will have a link to an online
             Hangout prior to start time.
           </p>
@@ -61,9 +61,7 @@ export class EventsList extends Component {
             <Card fluid key={id} className="event-cards">
               <Card.Content>
                 <Link to={`/${id}`} className="event-title">
-                  <big>
                     <Card.Header>{event.title}</Card.Header>
-                  </big>
                 </Link>
                 <Card.Meta>
                   {moment(event.start).format("MM-DD hh:mm")} -{" "}
