@@ -11,6 +11,7 @@ import AboutUs from "./AboutUs";
 import registerServiceWorker from "./registerServiceWorker";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import EventsList from "./components/EventsList";
+import HangoutsList from "./components/HangoutsList";
 import Navbar from "./components/Navbar";
 import "semantic-ui-css/semantic.min.css";
 
@@ -26,6 +27,7 @@ ReactDOM.render(
           <Route path="/users" component={Members} />
           <Route path="/premium" component={Premium} /> */}
           <Route path="/events" component={EventsList} />
+          <Route path="/hangouts" component={HangoutsList} />
           <Route path="/getting-started" component={EventsList} />
         </Switch>
       </React.Fragment>

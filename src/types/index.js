@@ -1,2 +1,4 @@
-export const GET_EVENTS = "GET_EVENTS"
-export const GET_PROJECTS = "GET_PROJECTS"
+export const GET_EVENTS = "GET_EVENTS";
+export const GET_HANGOUTS = "GET_HANGOUTS";
+export const ADD_HANGOUTS_PAGE = "ADD_HANGOUTS_PAGE";
+export const GET_PROJECTS = "GET_PROJECTS";
