@@ -1,11 +1,9 @@
 .event-cards {
-  height: 120px;
+  min-height: 120px;
 }
 
 .event-title {
   color: #EE7335;
-  font-size: x-large;
-  font-weight: bold;
   margin: 5px 10px 15px 0;
 }
 
@@ -14,11 +12,11 @@
 }
 
 .big-calendar {
-  margin-top: 50px;
+  margin-top: 2em;
 }
 
 .events-header {
-  font-size: 50px;
+  font-size: 3em !important;
 }
 
 div p {
