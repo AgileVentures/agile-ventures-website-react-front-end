@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchEvents } from "../actions/getEventsAction";
-import { Card, Container, Button } from "semantic-ui-react";
+import { Card, Container, Button, Header } from "semantic-ui-react";
 import BigCalendar from "react-big-calendar";
 import moment from "moment";
-import "react-big-calendar/lib/css/react-big-calendar.css";
+import EventCard from "./EventCard"
+
+import "../assets/react-big-calendar.css";
 import "../assets/eventsList.css";
-class EventsList extends Component {
+
+export class EventsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,17 +38,17 @@ class EventsList extends Component {
     return (
       <Container>
         <div>
-          <h1 className="events-header">
+          <Header size="huge" className="events-header">
             AgileVentures Events
             <Button
               content="New Event"
-              attached="right"
+              floated="right"
               className="new-event-button"
             />
-          </h1>
+          </Header>
           <p>
             We are hosting several events a day using Google Hangouts. Feel free
-            to join in if you want to get involved or if you a curious about
+            to join in if you want to get involved or if you are curious about
             Pair Programming and Agile. Each event will have a link to an online
             Hangout prior to start time.
           </p>
@@ -58,22 +61,8 @@ class EventsList extends Component {
 
         {events.map((event, id) => {
           return (
-            <Card fluid key={id} className="event-cards">
-              <Card.Content>
-                <Link to={`/${id}`} className="event-title">
-                  <big>
-                    <Card.Header>{event.title}</Card.Header>
-                  </big>
-                </Link>
-                <Card.Meta>
-                  {moment(event.start).format("MM-DD hh:mm")} -{" "}
-                  {moment(event.end).format("MM-DD hh:mm")}
-                </Card.Meta>
-              </Card.Content>
-              <Card.Description>
-                {event.description.substring(0, 120)}
-              </Card.Description>
-            </Card>
+            <EventCard key={id} event={event}>
+            </EventCard>
           );
         })}
       </Container>
