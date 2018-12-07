@@ -29,7 +29,7 @@ describe("Navbar", () => {
 
   it("should have 9 menu items and one dropdown menu", () => {
     expect(wrapper.find("MenuItem")).toHaveLength(9);
-    expect(wrapper.find("DropdownMenu")).toHaveLength(1);
+    expect(wrapper.find("Dropdown")).toHaveLength(1);
   });
 
   it("calls handleClickItem when clicked", () => {

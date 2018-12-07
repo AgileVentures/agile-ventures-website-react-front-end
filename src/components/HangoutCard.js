@@ -16,16 +16,16 @@ export default class HangoutCard extends Component {
           </YouTube>
         </Image>
         <Card.Content>
-          <Card.Header>{hangout.title}</Card.Header>
-          <Card.Meta> {hangout.category}
+          <Card.Header as="h3">{hangout.title}</Card.Header>
+          <Card.Meta>{hangout.category}
       </Card.Meta>
     </Card.Content>
     <Card.Content extra>
       <div className='ui two buttons'>
-        <a href={hangout.hangout_url} class={"ui basic button primary"} target="blank">
+        <a href={hangout.hangout_url} className={"ui button primary"} target="blank">
           Join
         </a>
-        <a href={this.youtubeURL(hangout.yt_video_id)} class={"ui basic button secondary"} target="blank">
+        <a href={this.youtubeURL(hangout.yt_video_id)} className={"ui button secondary"} target="blank">
           Watch
         </a>
       </div>

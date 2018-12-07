@@ -4,24 +4,19 @@ import { fetchHangouts, fetchHangoutsPage } from "../actions/getHangoutsAction";
 import { Button, Card, Container } from "semantic-ui-react";
 import HangoutCard from "./HangoutCard"
 
-class HangoutsList extends Component {
+export class HangoutsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
 			nextPage: 2,
     };
-    this.loadNextPage = this.loadNextPage.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchHangouts();
   }
 
-  componentDidUpdate() {
-    console.log(this.props.hangouts)
-  }
-
-  loadNextPage() {
+  loadNextPage = () => {
     this.props.fetchHangoutsPage(this.state.nextPage);
     this.setState(state => ({ nextPage: state.nextPage + 1}));
   }
@@ -44,11 +39,11 @@ class HangoutsList extends Component {
         <Card.Group>
           {this.props.hangouts.map((hangout, id) => {
             return (
-              <HangoutCard hangout={hangout} opts={videoOpts} />
+              <HangoutCard key={id} hangout={hangout} opts={videoOpts} />
             );
           })}
       </Card.Group>
-      <Button onClick={this.loadNextPage} >Load page {this.state.nextPage}</Button>
+      <Button color="blue" onClick={this.loadNextPage} >Load page {this.state.nextPage}</Button>
     </Container>
     );
   }
