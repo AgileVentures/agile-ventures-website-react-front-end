@@ -13,23 +13,22 @@ class App extends Component {
       return (
         <Grid.Row key={modal.reactId}>
           {modal.text}
-        <Grid.Column>
-          <Modal trigger={
-            <Button primary size="massive">
-              <Icon name='home' />
-              {modal.buttonText}
-            </Button>
-          } closeIcon>
-
-            <Modal.Content image>
-              <Image wrapped size='medium' src={modal.image} alt={modal.imageAltText} />
-              <Modal.Description>
-                {modal.modalText}
-              </Modal.Description>
-            </Modal.Content>
-          </Modal>
-        </Grid.Column>
-      </Grid.Row>
+          <Grid.Column>
+            <Modal trigger={
+              <Button primary size="massive">
+                <Icon name='home' />
+                {modal.buttonText}
+              </Button>
+            } closeIcon>
+              <Modal.Content image>
+                <Image wrapped size='medium' src={modal.image} alt={modal.imageAltText} />
+                <Modal.Description>
+                  {modal.modalText}
+                </Modal.Description>
+              </Modal.Content>
+            </Modal>
+          </Grid.Column>
+        </Grid.Row>
       );
     });
   };

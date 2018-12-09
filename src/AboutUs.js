@@ -3,7 +3,7 @@ import './App.css';
 
 class AboutUs extends Component {
     render() {
-        return (      
+        return (
         <div className="App">
         <p className="App-intro">
           About Us

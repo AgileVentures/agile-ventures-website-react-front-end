@@ -12,8 +12,9 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import EventsList from "./components/EventsList";
 import HangoutsList from "./components/HangoutsList";
+import ThemingLayout from "./components/ThemingLayout";
 import Navbar from "./components/Navbar";
-import "semantic-ui-css/semantic.min.css";
+import "semantic-ui/dist/semantic.min.css";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -30,6 +31,7 @@ ReactDOM.render(
             <Route path="/events" component={EventsList} />
             <Route path="/hangouts" component={HangoutsList} />
             <Route path="/getting-started" component={EventsList} />
+            <Route path="/demo" component={ThemingLayout} />
           </Switch>
         </div>
       </React.Fragment>

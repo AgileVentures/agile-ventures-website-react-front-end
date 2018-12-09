@@ -37,7 +37,8 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "semantic-ui": "^2.4.2"
   },
   "browserslist": [
     ">0.2%",

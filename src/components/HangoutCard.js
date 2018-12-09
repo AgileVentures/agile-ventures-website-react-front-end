@@ -5,10 +5,10 @@ import YouTube from "react-youtube";
 
 export default class HangoutCard extends Component {
   youtubeURL(id) {
-    return `https://www.youtube.com/watch?v=${id}`
+    return `https://www.youtube.com/watch?v=${id}`;
   }
   render(){
-    const { hangout, opts } = this.props
+    const { hangout, opts } = this.props;
     return (
       <Card key={hangout.id} >
         <Image>
@@ -31,6 +31,6 @@ export default class HangoutCard extends Component {
       </div>
     </Card.Content>
   </Card>
-    )
+    );
   }
 }
