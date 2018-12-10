@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Modal, Grid, Button, Image, Icon } from "semantic-ui-react";
+import {  Grid } from "semantic-ui-react";
 import HomepageModal from './HomepageModal'
 import "./../Homepage.css";
 import modals from "../modals";
