@@ -26,15 +26,13 @@ export class EventsList extends Component {
   }
 
   componentDidUpdate() {
-    window.localStorage.setItem("events", JSON.stringify(this.props.events));
   }
-  ready;
   render() {
-    let events = this.props.events.length
-      ? this.props.events
-      : JSON.parse(window.localStorage.getItem("events")) || [];
+    let events = this.props.events.length ?
+      this.props.events : []
 
     const localizer = BigCalendar.momentLocalizer(moment);
+    console.log(events)
     return (
       <Container>
         <div>
@@ -57,6 +55,9 @@ export class EventsList extends Component {
           className="big-calendar"
           localizer={localizer}
           events={events}
+          defaultView={BigCalendar.Views.WEEK}
+          step={15}
+          timeslots={8}
         />
 
         {events.map((event, id) => {
