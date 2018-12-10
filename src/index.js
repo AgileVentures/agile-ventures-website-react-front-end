@@ -21,19 +21,14 @@ ReactDOM.render(
     <Provider store={store}>
       <React.Fragment>
         <Navbar />
-        <div className={"pull-under-navbar"}>
-          <Switch>
-            <Route exact path="/" component={App} />
-            <Route path="/about-us" component={AboutUs} />
-            {/* <Route path="/projects" component={Projects} />
-            <Route path="/users" component={Members} />
-            <Route path="/premium" component={Premium} /> */}
-            <Route path="/events" component={EventsList} />
-            <Route path="/hangouts" component={HangoutsList} />
-            <Route path="/getting-started" component={EventsList} />
-            <Route path="/demo" component={ThemingLayout} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/about-us" component={AboutUs} />
+          <Route path="/events" component={EventsList} />
+          <Route path="/hangouts" component={HangoutsList} />
+          <Route path="/getting-started" component={EventsList} />
+          <Route path="/demo" component={ThemingLayout} />
+        </Switch>
       </React.Fragment>
     </Provider>
   </BrowserRouter>,
