@@ -48,4 +48,42 @@ Ensure has the DNS Zone on Azure is set correctly:
 
 ![Azure DNS Zone configuration pane](https://dl.dropbox.com/s/dzgh7i3sn4wrxqz/Screenshot%202018-11-01%2013.32.30.png?dl=0)
 
+Customize Semantic_UI
+----------------------
+
+After running:
+```
+npm install semantic-ui 
+```
+We get a new folder /semantic with semantic-ui sources.
+To create a custom build with customized colors you need to create a new folder inside:
+```
+$ mkdir semantic/src/themes/agile-ventures
+$ mkdir semantic/src/themes/agile-ventures/globals
+```
+inside you need copy the main `site.variables` from the default theme:
+```
+$ cp semantic/src/themes/default/globals/site.variables semantic/src/themes/agile-ventures/ 
+```
+This file can be now edited.
+After editing change `semantic/src/theme.config` from:
+ 
+```
+/* Global */
+@site        : 'default';
+@reset       : 'default';
+```
+to:
+```
+/* Global */
+@site        : 'agile-ventures';
+@reset       : 'default';
+```
+Now you can build the source:
+```
+cd semantic
+$ gulp build-css
+```
+the compiled source will be in the `semantic/dist` folder
+The current used [site.variables](scripts/site.variables) in in the scripts folder
 

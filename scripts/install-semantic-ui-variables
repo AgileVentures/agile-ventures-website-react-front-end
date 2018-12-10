@@ -1,0 +1,4 @@
+mkdir semantic/src/themes/agile-ventures/
+mkdir semantic/src/themes/agile-ventures/globals/
+cp scripts/site.variables semantic/src/themes/agile-ventures/globals/site.variables
+//edit theme.config
