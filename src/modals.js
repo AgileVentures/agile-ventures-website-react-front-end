@@ -8,6 +8,7 @@ const modals = [
   {
     buttonText: "You are here!",
     xsOffset: 1,
+    height: "150px",
     reactId: "here",
     image: codingWithCat,
     imageAltText: "working on a computer at home with cat",
@@ -16,8 +17,8 @@ const modals = [
   },
   {
     buttonText: "Scrums",
-    xsOffset: 0,
-    mdPull: 2,
+    xsOffset: 10,
+    height: "250px",
     reactId: "scrums",
     image: scrum,
     imageAltText:
@@ -27,7 +28,8 @@ const modals = [
   },
   {
     buttonText: "Real Projects",
-    xsOffset: 3,
+    xsOffset: 4,
+    height: "250px",
     reactId: "projects",
     image: realprojects,
     imageAltText: "shaking hands with business client across desk",
@@ -36,7 +38,8 @@ const modals = [
   },
   {
     buttonText: "Sprints",
-    xsOffset: 7,
+    xsOffset: 6,
+    height: "600px",
     reactId: "sprints",
     image: runners,
     imageAltText: "two people running",
@@ -45,7 +48,8 @@ const modals = [
   },
   {
     buttonText: "Jobs",
-    xsOffset: 5,
+    xsOffset: 8,
+    height: "920px",
     reactId: "jobs",
     image: jobs,
     imageAltText: "person holding briefcase looking towards city",

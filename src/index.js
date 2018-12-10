@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 //import './index.css';
-import App from "./App";
+import Homepage from "./components/Homepage";
 import AboutUs from "./AboutUs";
 // import Projects from "./Projects";
 // import Members from "./Members";
@@ -14,21 +14,23 @@ import EventsList from "./components/EventsList";
 import HangoutsList from "./components/HangoutsList";
 import ThemingLayout from "./components/ThemingLayout";
 import Navbar from "./components/Navbar";
-import "semantic-ui/dist/semantic.min.css";
+import "./assets/semantic.min.css";
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <React.Fragment>
         <Navbar />
-        <Switch>
-          <Route exact path="/" component={App} />
-          <Route path="/about-us" component={AboutUs} />
-          <Route path="/events" component={EventsList} />
-          <Route path="/hangouts" component={HangoutsList} />
-          <Route path="/getting-started" component={EventsList} />
-          <Route path="/demo" component={ThemingLayout} />
-        </Switch>
+        <div className="pull-under-navbar">
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route path="/about-us" component={AboutUs} />
+            <Route path="/events" component={EventsList} />
+            <Route path="/hangouts" component={HangoutsList} />
+            <Route path="/getting-started" component={EventsList} />
+            <Route path="/demo" component={ThemingLayout} />
+          </Switch>
+        </div>
       </React.Fragment>
     </Provider>
   </BrowserRouter>,
