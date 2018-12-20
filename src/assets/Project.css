@@ -1,0 +1,18 @@
+ul.card-footer {
+  display: flex;
+  padding-left: 0px !important;
+}
+
+.card-footer li {
+  margin: 20px 20px 0px 0px;
+}
+
+.project-image {
+  height: 222px;
+  max-width: 222px;
+}
+
+.project-card {
+  max-width: 222px !important;
+  margin: 15px 25px !important;
+}
