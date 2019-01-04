@@ -12,17 +12,14 @@ describe("PaginationLinks", () => {
     />
   );
 
-  it("should have links for each page", () => {
-    expect(wrapper.find("span")).toHaveLength(2);
+  it("should have links each page, next, and previous", () => {
+    expect(wrapper.find("span")).toHaveLength(4);
   });
       
   it("should be active when on selected page", () => {
-    let page2 = wrapper.find("span").filterWhere(item => {
-      return item.text() === "2";
-    });
     let activePage = wrapper.find("span").filterWhere(item => {
       return item.hasClass("active");
     });
-    expect(page2).toEqual(activePage);
+    expect(activePage.text()).toEqual("2");
   });
 });
