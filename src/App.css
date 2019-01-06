@@ -69,3 +69,7 @@ ul {
 .rbc-month-row {
   min-height: 100px;
 }
+
+.white-bg {
+  background: #fff;
+}

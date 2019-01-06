@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Card, Header } from "semantic-ui-react";
+import { Card, Header, Button, Grid, Popup } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { fetchProjects } from "../actions/getProjectsAction";
 import { Link } from "react-router-dom";
@@ -7,6 +7,9 @@ import Select from "react-select";
 import PaginateProjects from "../components/PaginateProjects";
 import PaginationLinks from "../components/PaginationLinks";
 import "../assets/ProjectsList.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
 export class ProjectsList extends Component {
   constructor(props) {
     super(props);
@@ -187,7 +190,29 @@ export class ProjectsList extends Component {
 
     return (
       <Fragment>
-        <Header className="projects-list-header">List of Projects</Header>
+        <Grid columns={2}>
+          <Grid.Row>
+            <Grid.Column floated="left" width={9}>
+              <Header className="projects-list-header">List of Projects</Header>
+            </Grid.Column>
+            <Grid.Column floated="right" width={3}>
+              <a href="/projects/new">
+                <Popup
+                  trigger={
+                    <Button basic>
+                      <FontAwesomeIcon
+                        icon={faPlus}
+                        size="2x"
+                        color="#ee7335"
+                      />
+                    </Button>
+                  }
+                  content="New Project!"
+                />
+              </a>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
         <div>
           <p>
             To get involved in any of the projects, join one of the
